@@ -15,6 +15,7 @@ module.exports = (app) => {
 
 	app.on('pull_request.opened', async (context) => {
     console.log('pull request opened')
+    return context.octokit.issues.createComment(issueComment);
   })
 
 	// For more information on building apps:
